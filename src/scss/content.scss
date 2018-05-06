@@ -1,0 +1,35 @@
+#content{
+    font-family: 'Skranji', cursive;
+    margin: 1em 5em;
+
+    width: 70vw;
+
+    p{
+        margin: 0.5em;
+    }
+
+    #links{
+
+        p{
+            display: inline;
+        }
+
+        div{
+            display: inline;
+        }
+    }
+
+    // lol
+    #unicorn-face:hover{
+        animation: unicorn_power 1s linear infinite;
+    }
+
+    @keyframes unicorn_power {
+        0% {
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+}

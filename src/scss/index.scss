@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Skranji');
+
+@import './hero.scss';
+@import './content.scss';
+
+*{
+    padding: 0em;
+    margin: 0em;
+}
+
+html, body{
+    background: url('https://i.imgur.com/lvj6bqd.png') no-repeat fixed;
+}
+
+.emoji{
+    width: 1.5em;
+}
