@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#D3D3D3">
+    <link rel="manifest" href="manifest.json">
+    <title>Felix Fong</title>
+</head>
+<body>
+    <div id="hero">
+        <div class="bg_image_container">
+            <div class="bg_image"></div>
+            <div id="my_face_lol"></div>
+            <h1>Felix Fong</h1>
+        </div>
+        <i class="material-icons" id="scroll_down_button">keyboard_arrow_down</i>
+    </div>
+
+    <div id="content">
+
+        <div id="about_me">
+            <h1>A Story About Me</h1>
+            <p>
+                I'm a self-teach software engineer <img src="https://api.emojione.com/emoji/1f468-1f4bb/download/32" alt="emoji - man technologist" class="emoji"> , most of my learning experience 
+                is coming from YouTube, and from time to time I just build some really 
+                ridiculously stupid project <img src="https://api.emojione.com/emoji/1f61d/download/32" alt="emoji - squinting face with tongue" class="emoji">, and trying to learn a few new technologies on 
+                the way threw
+            </p>
+
+            <p>
+                I had messing around with the web over 3 years now, 
+                starting from making basic HTML pages all the way through 
+                programming server-side languages <img src="https://api.emojione.com/emoji/1f448/download/32" alt="emoji - backhand index pointing left" class="emoji">
+            </p>
+
+            <p>
+                And lately, I also got involved some DevOps tooling,
+                like Docker <img src="https://api.emojione.com/emoji/1f42c/download/32" alt="emoji - dolphin" class="emoji"> and how to set up a Nginx server over an HTTPS <img src="https://api.emojione.com/emoji/1f510/download/32" alt="emoji - locked with key" class="emoji"> connection,
+                and the funny things are I kind of enjoying this kind of operation <img src="https://api.emojione.com/emoji/1f92d/download/32" alt="emoji - face with hand over mouth" class="emoji">
+            </p>
+
+            <p>
+                <!-- lol I have to -->
+                Oh, one more thing, I'm a Brony lol <img src="https://api.emojione.com/emoji/1f984/download/32" id="unicorn-face" alt="emoji - unicorn face" class="emoji">
+            </p>
+        </div>
+
+        <div id="social_media_links">
+            <h1>Social Media Links</h1>
+            <div id="links">
+
+                <div id="twitter">
+                    <a href="https://twitter.com/felixfong227">
+                        <img src="https://api.emojione.com/emoji/1f426/download/32" alt="emoji - bird">
+                    </a>
+                    <p>Twitter</p>
+                </div>
+
+                <div id="github">
+                    <a href="https://github.com/felixfong227">
+                        <img src="https://api.emojione.com/emoji/1f431/download/32" alt="emoji - cat face">
+                        <img src="https://api.emojione.com/emoji/1f419/download/32" alt="emoji - octopus">
+                    </a>
+                    <p>GitHub</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js', {
+                scope: '/',
+            })
+            .then(function(reg) {
+                console.log('Service work register success');
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        }
+    </script>
+<script type="text/javascript" src="bundle.js"></script></body>
+</html> 
