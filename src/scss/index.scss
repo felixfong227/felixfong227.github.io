@@ -4,6 +4,7 @@
 
 @import './hero.scss';
 @import './content.scss';
+@import './emoji.scss';
 
 *{
     padding: 0em;
@@ -14,6 +15,6 @@ html, body{
     background: url('https://i.imgur.com/lvj6bqd.png') no-repeat fixed;
 }
 
-.emoji{
-    width: 1.5em;
+a{
+    text-decoration: none;
 }
