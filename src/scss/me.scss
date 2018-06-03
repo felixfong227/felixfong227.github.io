@@ -1,0 +1,76 @@
+#icon {
+    background: url(https://avatars0.githubusercontent.com/u/13918481?v=4) no-repeat center;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.6) 5px 5px 5px;
+    display: inline-block;
+    @media only screen and (max-width: 415px) {
+        margin-top: 4em;
+        width: 7em;
+        height: 7em;
+    }
+}
+
+#description {
+    position: absolute;
+    bottom: 0em;
+    right: 0em;
+    text-align: right;
+    background: #161616;
+    color: #FFF;
+    width: 50%;
+    height: 50%;
+    padding: 2em;
+    @media only screen and (max-width: 415px) {
+        width: 100vw;
+        padding: 5em;
+        text-align: center;
+        height: 40vh;
+    }
+}
+
+#title {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 7em;
+    padding: 0.5em;
+    right: 0em;
+    height: 2.1em;
+    float: right;
+    .js {
+        background: #f7df1e;
+        color: #161616;
+        top: 0em;
+        overflow: hidden;
+    }
+    .node {
+        background: #66cc33;
+        color: #FFF;
+        top: 2.1em;
+        &.show {
+            top: 0em;
+        }
+    }
+    .block {
+        text-align: center;
+        padding: 0.5em;
+        width: 7em;
+        position: absolute;
+        right: 0em;
+        transition: top 0.2s ease-in-out;
+    }
+}
+
+#end {
+    position: absolute;
+    right: 5em;
+    margin-top: 2.5em;
+}

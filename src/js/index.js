@@ -1,10 +1,34 @@
 import '../scss/index.scss';
 
 import convertEmoji from './convertEmoji';
+import isInViewPort from './isInViewPort';
 
-convertEmoji();
+window.onload = () => {
+    let titleClick = false;
+    const titleEl = document.querySelector('#title');
+    const node = document.querySelector('#title .node');
+    titleEl.onclick = () => {
+        if(!titleClick){
+        node.classList.add('show');
+        }else{
+        node.classList.remove('show');
+        }
+        titleClick = !titleClick;
+    }
 
-const scroll_down_button = document.querySelector('#scroll_down_button');
-scroll_down_button.onclick = function(){
-    scroll_down_button.scrollIntoView({block: 'start', behavior: 'smooth'});
+    convertEmoji();
+
+    const cards = document.querySelector('#cards');
+
+    window.addEventListener('scroll', handelScrolling, true);
+
+    function handelScrolling(e){
+        const animate = isInViewPort(cards);
+        if(animate){
+            window.removeEventListener('scroll', handelScrolling);
+            cards.style.opacity = 1;
+            cards.className = 'animated fadeInUp';
+        }    
+    }
+
 }
