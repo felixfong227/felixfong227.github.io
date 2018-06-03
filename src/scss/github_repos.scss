@@ -1,0 +1,38 @@
+#github_repos {
+    background: #f7f7f7;
+    #des {
+        padding: 1.5em;
+        .fas.fa-star {
+            color: #f7f06a;
+        }
+    }
+    a {
+        color: #161616;
+        text-decoration: none;
+    }
+    #cards {
+        opacity: 0;
+    }
+    .card {
+        display: inline-block;
+        width: 25em;
+        height: 9em;
+        transition: box-shadow 0.2s ease-in-out;
+        padding: 0.5em;
+        margin: 0.5em 1em;
+        .content {
+            margin: 0.6em;
+        }
+        .icon {
+            margin: 0.4em;
+        }
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.6) 3px 3px 5px;
+        }
+
+        @media only screen and (max-width: 415px) {
+            width: 93%;
+            box-shadow: rgba(0, 0, 0, 0.6) 3px 3px 5px;
+        }
+    }
+}

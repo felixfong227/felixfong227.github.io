@@ -1,8 +1,0 @@
-{
-    "short_name": "Felix Fong",
-    "name": "Felix Fong",
-    "start_url": "./index.html",
-    "display": "standalone",
-    "theme_color": "#D3D3D3",
-    "background_color": "#D3D3D3"
-  }
