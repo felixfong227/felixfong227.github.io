@@ -1,0 +1,28 @@
+.icon_set {
+
+    border-radius: 50%;
+    padding: 0.5em;
+    margin: 0.2em;
+
+
+    &.small {
+        width: 4em;
+        height: 4em;
+    }
+
+    &.micro {
+        width: 2em;
+        height: 2em;
+        padding: 0.3em;
+        margin: 0.1em;
+    }
+
+    &.bg_white {
+        background: white;
+    }
+
+    &.bg_black {
+        background: #161616;
+    }
+
+}
