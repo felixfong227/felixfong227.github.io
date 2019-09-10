@@ -7,106 +7,120 @@
     <title>Felix Fong</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script src="//instant.page/2.0.0" type="module" defer integrity="sha384-D7B5eODAUd397+f4zNFAVlnDNDtO1ppV8rPnfygILQXhqu3cUndgHvlcJR2Bhig8"></script>
 </head>
 <body>
-    <div id="bg">
+
+    <div id="bg_container">
+
+        <div id="bg"></div>
+
         <div class="credit">
             <span>Art work by: </span>
             <a href="https://ghost3641.deviantart.com/art/Soar-through-the-sky-725895458">Ghost3641</a>
         </div>
+
     </div>
-    
+
     <div id="icon"></div>
     <div id="description">
         <h1>Felix Fong</h1>
         <div>
             <h4>I'm a</h4>
-    
+
             <div id="title">
                 <span class="js block">JavaScript</span>
                 <span class="node block">Node.js</span>
             </div>
-    
+
         </div>
-    
+
         <div id="end">
             <h3>Developer</h3>
-            <a href="https://github.com/felixfong227">GitHub</a>
-            <a href="https://twitter.com/felixfong227">Twitter</a>
-            <a href="https://www.patreon.com/felixfong227">Patreon</a>
+
+            <div class="site_icons">
+                <a href="https://github.com/felixfong227">
+                    <img class="icon_set small bg_white" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" />
+                </a>
+
+                <a href="https://twitter.com/felixfong227">
+                    <img class="icon_set small bg_white" src="https://upload.wikimedia.org/wikipedia/fr/c/c8/Twitter_Bird.svg" />
+                </a>
+
+                <a href="https://www.linkedin.com/in/felixfong227/">
+                    <img class="icon_set small bg_white" src="https://image.flaticon.com/icons/svg/174/174857.svg" />
+                </a>
+
+                <a href="https://www.patreon.com/felixfong227">
+                    <img class="icon_set small bg_white" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg" />
+                </a>
+
+                <a href="https://ko-fi.com/felixfong227">
+                    <img class="icon_set small bg_white" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/ko_fi.svg" />
+                </a>
+            </div>
+
         </div>
     </div>
-    
+
     <div id="github_repos">
-    
+
         <div id="des">
-            <h3>My open source works</h3>
+            <h3>Some Of My Open Source Works</h3>
             <i class="fas fa-star"></i>
         </div>
-    
+
         <div id="cards">
-    
-            <a href="https://github.com/felixfong227/felixfong227.github.io">
-                <div class="card">
-                    <i class="fab fa-github icon"></i>
-                    <div class="content">
-                        <h3>felixfong227.github.io</h3>
-                        <p>My personal website lol</p>
-                    </div>
-                </div>
-            </a>
-    
-            <a href="https://github.com/AminoJS/Amino.JS">
-                <div class="card">
-                    <i class="fab fa-github icon"></i>
-                    <div class="content">
-                        <h3>AminoJS/Amino.JS</h3>
-                        <p>A library for the Amino API</p>
-                    </div>
-                </div>
-            </a>
-    
-            <a href="https://github.com/ponydevs/ponysay.ml">
-                <div class="card">
-                    <i class="fab fa-github icon"></i>
-                    <div class="content">
-                        <h3>ponydevs/ponysay.ml</h3>
-                        <p>Ponysay command, but RESful API</p>
-                    </div>
-                </div>
-            </a>
-    
+            <!-- Using AJAX to fill in all the repos from my personal GitHub page -->
         </div>
+
     </div>
-    
+
     <div id="story_time" class="container">
-        <h1>A Story About Me</h1>
+        <h1>A Story About Myself</h1>
         <p>
             I'm a self-teach software engineer
-            <span class="emoji">:man_technologist:</span> , most of my learning experience more or less is coming from YouTube, and from time to time I just build
-            some really ridiculously stupid project
-            <span class="emoji">:stuck_out_tongue_closed_eyes:</span>, and trying to learn a few new technologies on the way threw
+            <span class="emoji">:man_technologist:</span> most of my learning experience more or less is coming from YouTube, and from time to time I just build some ridiculously stupid projects
+            <span class="emoji">:stuck_out_tongue_closed_eyes:</span> and trying to learn a few new technologies on the way
         </p>
-    
+
         <p>
-            I had messing around with the web over 3 years now, starting from making basic HTML pages all the way through programming
-            some of the well knew server-side languages
+            I had messing around with the web for over 3 years now, starting from making basic HTML pages all the way through programming some of the well known server-side languages like NodeJS/PHP/Go
             <span class="emoji">:point_left:</span>
         </p>
-    
+
         <p>
             And lately, I also got involved some DevOps tooling, like Docker
-            <span class="emoji">:dolphin:</span> and how to set up a Nginx server over an HTTPS
-            <span class="emoji">:closed_lock_with_key:</span> connection, and the funny things are I kind of enjoying this kind of operation
+            <span class="emoji">:dolphin:</span> and how to set up an Nginx server over a TLS
+            <span class="emoji">:closed_lock_with_key:</span> connection, but the funny things are I kind of enjoying this kind of stuff
             <span
                 class="emoji">:face_with_hand_over_mouth:</span>
         </p>
-    
+
         <p>
             <!-- lol I have to -->
-            Oh, one more thing, I'm a Brony and OwO
+            Oh, one more thing, I'm a Brony and furry OwO
             <span class="emoji">:unicorn:</span>
         </p>
+    </div>
+
+    <div id="donation" class="container">
+        <h1>Donation</h1>
+        <p>
+            Please do consider donating a few bucks to me, you know for buying a couple of coffee for those endless nights trying to make things run lul
+        </p>
+
+        <div class="site_icons">
+            <a href="https://www.patreon.com/felixfong227">
+                <img class="icon_set small bg_white" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg" />
+            </a>
+
+            <a href="https://ko-fi.com/felixfong227">
+                <img class="icon_set small bg_white" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/ko_fi.svg" />
+            </a>
+            <p>Much Appreciated <span class="emoji">:heart_eyes_cat:</span></p>
+        </div>
+
     </div>
 
     <div id="contact" class="container">
@@ -115,13 +129,12 @@
         <p>Please do feel free to contact me at any time, I will do my best to response ASAP</p>
 
         <p>
-            My email address <span class="emoji">:point_right:</span> moongod101@hotmail.com
-        </p>
-
-        <p>
-            DM me @ Twitter <span class="emoji">:bird:</span> <a href="https://twitter.com/felixfong227">@felixfong227</a>
+            DM me
+            <a href="https://twitter.com/felixfong227">
+                <img class="icon_set micro bg_black" src="https://upload.wikimedia.org/wikipedia/fr/c/c8/Twitter_Bird.svg" />
+            </a>
         </p>
 
     </div>
-<script type="text/javascript" src="bundle.js"></script></body>
+<script type="text/javascript" src="bundle.js"></script><script type="text/javascript" src="bundle.js"></script></body>
 </html>
