@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/js/index.js',
   output: {
     filename: '[hash].min.js',
-    path: path.resolve(`${__dirname}/dist/docs`),
+    path: path.resolve(`${__dirname}/dist`),
   },
   optimization: {
       splitChunks: {
