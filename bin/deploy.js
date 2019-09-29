@@ -11,7 +11,6 @@ const options = {
         name: 'Felix Fong',
         email: 'moongod101@hotmail.com'
   },
-  silent: true,
 }
 
 ghPages.publish('dist', options , err => {
