@@ -14,7 +14,7 @@ const options = {
   silent: true,
 }
 
-ghpages.publish('dist', options , err => {
+ghPages.publish('dist', options , err => {
     if(err) {
         return console.error(err);
     }
