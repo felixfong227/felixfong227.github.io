@@ -23,7 +23,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and deploy
       run: |
-        echo -n "felixfong227.me" >> CNAME
+        echo -n "felixfong227.me" >> dist/CNAME
         npm install
         npm run build
         npm run deploy
