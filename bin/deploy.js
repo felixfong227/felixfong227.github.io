@@ -1,16 +1,12 @@
 const ghPages = require('gh-pages');
 
-const ACCESS_TOKEN = process.env.GITHUB_TOKEN;
-
-if(!ACCESS_TOKEN) throw new Error('ENV GITHUB_TOKEN does not exits');
-
 const options = {
     branch: 'gh-pages',
-    repo: `https://${ACCESS_TOKEN}@github.com/felixfong227/felixfong227.github.io.git`,
+    repo: `https://github.com/felixfong227/felixfong227.github.io.git`,
     user: {
         name: 'Felix Fong',
         email: 'moongod101@hotmail.com'
-  },
+  }
 }
 
 ghPages.publish('dist', options , err => {
