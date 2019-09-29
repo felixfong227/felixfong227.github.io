@@ -20,29 +20,29 @@ const options = {
 
 const BUILD_DIR = path.resolve(`${__dirname}/../dist`);
 
-const listOfFilesNeedToCopy = [
-    'README.md',
-    'CNAME',
-];
+// const listOfFilesNeedToCopy = [
+//     'README.md',
+//     'CNAME',
+// ];
 
-console.log('BUILD_DIR: ', BUILD_DIR);
+// console.log('BUILD_DIR: ', BUILD_DIR);
 
-listOfFilesNeedToCopy.forEach(file => {
+// listOfFilesNeedToCopy.forEach(file => {
 
-    const filePath = path.resolve(`${__dirname}/../${file}`);
+//     const filePath = path.resolve(`${__dirname}/../${file}`);
 
-    console.log(`Copying file ${filePath}`);
+//     console.log(`Copying file ${filePath}`);
 
-    fs.copyFileSync(
-        filePath,
-        BUILD_DIR,
-    );
+//     fs.copyFileSync(
+//         filePath,
+//         BUILD_DIR,
+//     );
 
-    console.log('Done copying that file');
+//     console.log('Done copying that file');
 
-});
+// });
 
-console.log('Done copying all require files');
+// console.log('Done copying all require files');
 
 console.log('Deploying directory');
 
