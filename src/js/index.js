@@ -1,32 +1,34 @@
 import '../scss/index.scss';
 
-import convertEmoji from './convertEmoji';
 import isInViewPort from './isInViewPort';
-import fetchGitHubProjects from './fetchGitHubProjects';
 
-import CheckWebP from './CheckWebP';
+import('./loadAssets').then(func => func.default()).catch(err => {
+    document.body.innerHTML = 'Opps, fail to load CSS files, please refresh the page and try again';
+});
 
-window.addEventListener('load', () => {
-    CheckWebP(isWebPSupport => {
-        (() => {
-            // #icon
-            let src = 'https://avatars0.githubusercontent.com/u/13918481?v=4';
-            src = `https://images.weserv.nl/?url=${src}&h=250`;
-            if(isWebPSupport) src += '&output=webp';
-            const icon = document.querySelector('#icon');
-            console.log(src);
-            icon.style.backgroundImage = `url(${src})`;
-        })();
+import('./CheckWebP')
+    .then(CheckWebP => {
+        window.addEventListener('load', () => {
+            CheckWebP.default(isWebPSupport => {
+                (() => {
+                    // #icon
+                    let src = 'https://avatars0.githubusercontent.com/u/13918481?v=4';
+                    src = `https://images.weserv.nl/?url=${src}&h=250`;
+                    if(isWebPSupport) src += '&output=webp';
+                    const icon = document.querySelector('#icon');
+                    icon.style.backgroundImage = `url(${src})`;
+                })();
 
-        (() => {
-            // #bg image url
-            let src = 'https://images.weserv.nl/?url=pre00.deviantart.net/4158/th/pre/f/2018/017/a/3/soar_through_the_sky_by_ghost3641-dc06giq.png&blur=3';
-            if(isWebPSupport) src += '&output=webp';
-            const bg = document.querySelector('#bg');
-            bg.style.backgroundImage = `url(${src})`;
-        })();
+                (() => {
+                    // #bg image url
+                    let src = 'https://images.weserv.nl/?url=pre00.deviantart.net/4158/th/pre/f/2018/017/a/3/soar_through_the_sky_by_ghost3641-dc06giq.png&blur=3';
+                    if(isWebPSupport) src += '&output=webp';
+                    const bg = document.querySelector('#bg');
+                    bg.style.backgroundImage = `url(${src})`;
+                })();
+            });
+        });
     });
-})
 
 function createCardElemene(options) {
     const { URL, name, description} = options;
@@ -46,20 +48,21 @@ function createCardElemene(options) {
 
 const cards = document.querySelector('#cards');
 
-fetchGitHubProjects()
-.then(repos => {
-    const listOfCards = repos.map(repo => {
-        return createCardElemene({
-            URL: repo.html_url,
-            name: repo.name,
-            description: repo.description
+import('./fetchGitHubProjects')
+    .then(fetchGitHubProjects => {
+        return fetchGitHubProjects.default();
+    })
+    .then(repos => {
+        const listOfCards = repos.map(repo => {
+            return createCardElemene({
+                URL: repo.html_url,
+                name: repo.name,
+                description: repo.description
+            });
         });
-    });
-    cards.innerHTML = listOfCards.join('');
-})
-.catch(err => {
-    console.error(err);
-})
+        cards.innerHTML = listOfCards.join('');
+    })
+    .catch(err => console.error(err) );
 
 window.onload = () => {
     let titleClick = false;
@@ -86,5 +89,3 @@ window.onload = () => {
     }
 
 }
-
-convertEmoji();
