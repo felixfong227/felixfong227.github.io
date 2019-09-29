@@ -1,5 +1,5 @@
 export default function supportsWebp(cb) {
-    if(!window.localStorage) return false; // LocalStorage is not supported in this browser
+    if(!window.localStorage) cb(false); // LocalStorage is not supported in this browser
 
     if(window.localStorage.getItem('webp_support') !== null) {
         if(typeof cb === 'function') {
