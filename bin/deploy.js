@@ -29,7 +29,7 @@ console.log('BUILD_DIR: ', BUILD_DIR);
 
 listOfFilesNeedToCopy.forEach(file => {
 
-    const filePath = path.resolve(`${__dirname}/${file}`);
+    const filePath = path.resolve(`${__dirname}/../${file}`);
 
     console.log(`Copying file ${filePath}`);
 
