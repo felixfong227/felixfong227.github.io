@@ -6,13 +6,14 @@
   "repository": "https://github.com/felixfong227.github.io",
   "author": "Felix Fong <moongod101@hotmail.com>",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
     "@babel/preset-env": "^7.0.0-beta.46",
     "babel-loader": "^8.0.0-beta",
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^3.0.2",
+    "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
@@ -23,7 +24,8 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --hot"
+    "start": "webpack-dev-server --mode development --hot",
+    "deploy": "node ./bin/deploy.js"
   },
   "dependencies": {}
 }
