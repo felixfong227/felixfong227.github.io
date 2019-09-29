@@ -6,29 +6,29 @@ import('./loadAssets').then(func => func.default()).catch(err => {
     document.body.innerHTML = 'Opps, fail to load CSS files, please refresh the page and try again';
 });
 
-import('./CheckWebP')
+window.addEventListener('load', () => {
+    import('./CheckWebP')
     .then(CheckWebP => {
-        window.addEventListener('load', () => {
-            CheckWebP.default(isWebPSupport => {
-                (() => {
-                    // #icon
-                    let src = 'https://avatars0.githubusercontent.com/u/13918481?v=4';
-                    src = `https://images.weserv.nl/?url=${src}&h=250`;
-                    if(isWebPSupport) src += '&output=webp';
-                    const icon = document.querySelector('#icon');
-                    icon.style.backgroundImage = `url(${src})`;
-                })();
+        CheckWebP.default(isWebPSupport => {
+            (() => {
+                // #icon
+                let src = 'https://avatars0.githubusercontent.com/u/13918481?v=4';
+                src = `https://images.weserv.nl/?url=${src}&h=250`;
+                if(isWebPSupport) src += '&output=webp';
+                const icon = document.querySelector('#icon');
+                icon.style.backgroundImage = `url(${src})`;
+            })();
 
-                (() => {
-                    // #bg image url
-                    let src = 'https://images.weserv.nl/?url=pre00.deviantart.net/4158/th/pre/f/2018/017/a/3/soar_through_the_sky_by_ghost3641-dc06giq.png&blur=3';
-                    if(isWebPSupport) src += '&output=webp';
-                    const bg = document.querySelector('#bg');
-                    bg.style.backgroundImage = `url(${src})`;
-                })();
-            });
+            (() => {
+                // #bg image url
+                let src = 'https://images.weserv.nl/?url=pre00.deviantart.net/4158/th/pre/f/2018/017/a/3/soar_through_the_sky_by_ghost3641-dc06giq.png&blur=3';
+                if(isWebPSupport) src += '&output=webp';
+                const bg = document.querySelector('#bg');
+                bg.style.backgroundImage = `url(${src})`;
+            })();
         });
     });
+});
 
 function createCardElemene(options) {
     const { URL, name, description} = options;
