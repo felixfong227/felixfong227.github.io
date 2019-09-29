@@ -7,12 +7,9 @@ import('./loadAssets').then(func => func.default()).catch(err => {
 });
 
 window.addEventListener('load', () => {
-    console.log('Finish loading webpage');
     import('./CheckWebP')
     .then(CheckWebP => {
-        console.log('Done loading WebP Checking Mods');
         CheckWebP.default(isWebPSupport => {
-            console.log('Is WebP supported ', isWebPSupport);
             (() => {
                 // #icon
                 let src = 'https://avatars0.githubusercontent.com/u/13918481?v=4';
