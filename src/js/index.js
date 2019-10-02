@@ -7,12 +7,9 @@ import('./loadAssets').then(func => func.default()).catch(err => {
 });
 
 window.addEventListener('load', () => {
-    console.log('Finish loading webpage');
     import('./CheckWebP')
     .then(CheckWebP => {
-        console.log('Done loading WebP Checking Mods');
         CheckWebP.default(isWebPSupport => {
-            console.log('Is WebP supported ', isWebPSupport);
             (() => {
                 // #icon
                 let src = 'https://avatars0.githubusercontent.com/u/13918481?v=4';
@@ -51,22 +48,6 @@ function createCardElemene(options) {
 
 const cards = document.querySelector('#cards');
 
-import('./fetchGitHubProjects')
-    .then(fetchGitHubProjects => {
-        return fetchGitHubProjects.default();
-    })
-    .then(repos => {
-        const listOfCards = repos.map(repo => {
-            return createCardElemene({
-                URL: repo.html_url,
-                name: repo.name,
-                description: repo.description
-            });
-        });
-        cards.innerHTML = listOfCards.join('');
-    })
-    .catch(err => console.error(err) );
-
 window.onload = () => {
     let titleClick = false;
     const titleEl = document.querySelector('#title');
@@ -82,12 +63,32 @@ window.onload = () => {
 
     window.addEventListener('scroll', handelScrolling, true);
 
+    let loadingGitHubProjects = false;
+
     function handelScrolling(e){
         const animate = isInViewPort(cards);
-        if(animate){
-            window.removeEventListener('scroll', handelScrolling);
-            cards.style.opacity = 1;
-            cards.className = 'animated fadeInUp';
+        if(animate && loadingGitHubProjects === false){
+            loadingGitHubProjects = true;
+            import('./fetchGitHubProjects')
+            .then(fetchGitHubProjects => {
+                return fetchGitHubProjects.default();
+            })
+            .then(repos => {
+                const listOfCards = repos.map(repo => {
+                    return createCardElemene({
+                        URL: repo.html_url,
+                        name: repo.name,
+                        description: repo.description
+                    });
+                });
+
+                cards.innerHTML = listOfCards.join('');
+                window.removeEventListener('scroll', handelScrolling);
+                cards.style.opacity = 1;
+                cards.className = 'animated fadeInUp';
+
+            })
+            .catch(err => console.error(err) );
         }
     }
 
