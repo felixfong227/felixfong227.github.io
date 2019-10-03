@@ -81,7 +81,7 @@ window.onload = () => {
                         description: repo.description
                     });
                 });
-
+                document.querySelector('#des > .loading-text').style.display = 'none'
                 cards.innerHTML = listOfCards.join('');
                 window.removeEventListener('scroll', handelScrolling);
                 cards.style.opacity = 1;
