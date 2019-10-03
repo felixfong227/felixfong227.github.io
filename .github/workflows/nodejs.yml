@@ -25,7 +25,7 @@ jobs:
       run: |
         npm install
         npm run build
-        echo -n "felixfong227.me" >> dist/CNAME
+        node ./bin/CNAME_GEN.js
         npm run deploy
       env:
         CI: true
